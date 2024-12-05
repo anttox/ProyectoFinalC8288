@@ -111,3 +111,71 @@ Proyecto-Final/
 │
 ├── .gitignore                      
 ```
+# 1. Configuración del Sistema
+## Base de Datos: PostgreSQL
+Se utiliza PostgreSQL por su fiabilidad y capacidad para manejar relaciones complejas entre datos. Las tablas creadas incluyen:
+```bash
+    Usuarios: Información básica y roles.
+    Recursos de Infraestructura: Definición de recursos gestionados.
+    Logs de Actividad: Historial de operaciones realizadas.
+```
+
+## Backend: Node.js y Express
+El backend implementa APIs REST para manejar:
+```bash
+    Autenticación y Autorización: Uso de JWT y roles (RBAC).
+    Gestión de Recursos y Usuarios: Creación, lectura, actualización y eliminación (CRUD).
+    Logs de Actividad: Middleware que registra todas las operaciones importantes.
+```
+
+## Frontend: React
+Se utiliza React con Redux para manejar el estado de la aplicación. El frontend incluye:
+```bash
+    Formularios de registro/login.
+    Listado, creación y edición de recursos.
+    Gestión de usuarios por roles.
+```
+
+# 2. Mejoras evaludas y configuradas
+## 1. Helmet.js
+### Porque lo usamos:
+Helmet.js es una biblioteca de Node.js diseñada para mejorar la seguridad de las aplicaciones web configurando encabezados de seguridad HTTP. Estos encabezados protegen contra vulnerabilidades comunes como Cross-Site Scripting (XSS), Clickjacking, y ataques de fuerza bruta.
+
+![imagen](https://github.com/user-attachments/assets/2517b714-28fe-4327-9048-279aef4d8975)
+
+## 2. Crypto
+### Porque lo usamos:
+La biblioteca crypto de Node.js proporciona herramientas para realizar operaciones criptográficas como cifrado, creación de hashes, y generación de claves de manera segura.
+
+![imagen](https://github.com/user-attachments/assets/4dbf96b3-955f-471f-8244-9785a69cc0c2)
+
+## 3. Bcrypt.js
+### Porque lo usamos:
+Bcrypt es una biblioteca de hashing diseñada específicamente para manejar contraseñas de forma segura. A diferencia de los algoritmos de hashing genéricos, Bcrypt incluye mecanismos para dificultar los intentos de fuerza bruta.
+
+## 4. Redis
+### Porque lo usamos:
+- Redis es una base de datos en memoria extremadamente rápida que se utiliza para gestionar caché y sesiones de usuario de manera eficiente.
+- Cacheamos respuestas frecuentes del backend para reducir la carga del servidor.
+- Gestionamos tokens JWT y sesiones de usuario, permitiendo validaciones rápidas sin consultas repetitivas a la base de datos.
+
+![Imagen pegada (3)](https://github.com/user-attachments/assets/de49779b-51ac-4ca6-82ce-0f842ad07251)
+
+
+## 5. HTTPS
+### Porque lo usamos:
+- HTTPS asegura la comunicación entre cliente y servidor, protegiendo los datos transmitidos mediante cifrado SSL/TLS. (Usamos certificados SSL autogenerados por OpenSSL)
+- Todo el tráfico entre el frontend y backend se cifra utilizando HTTPS, protegiendo las credenciales de usuario, configuraciones de recursos, y otros datos sensibles.
+
+![imagen](https://github.com/user-attachments/assets/dddc51bc-1aa5-4e34-bf97-15a9cf82ed10)
+
+![imagen](https://github.com/user-attachments/assets/59c3b08d-619f-425f-8bab-d17a84d0e8a0)
+
+# Parte 3: Mejora Futura
+## 1. Monitorización con Prometheus y Grafana
+Aunque aún no implementado, se planea integrar:
+```bash
+    Prometheus: Para recopilar métricas de los contenedores y servicios.
+    Grafana: Para visualizar dashboards de rendimiento y alertas.
+```
+
