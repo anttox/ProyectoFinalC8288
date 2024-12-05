@@ -178,6 +178,7 @@ Aunque aún no implementado, se planea integrar:
     Prometheus: Para recopilar métricas de los contenedores y servicios.
     Grafana: Para visualizar dashboards de rendimiento y alertas.
 ```
+Podemos tener una idea mas detallada para recopilar mediante exporters para recopilar metricas del backend, PostgreSql y Redis, esto en Prometheus y en Grafana visualizar los datos de recursos como CPU, Memoria, etc.
 # Parte 4: Lanzamiento del sistema de autorización para aplicativos web usando HTTPS para mayor seguridad
 - Clona este repositorio que contiene el proyecto usando: git clone
 - Una vez que hayas establecido tu archivo de clonacion usa docker compose up --build para crear en la carpeta sistema-autorizacion para construir las imagenes de Docker para cada servicio (backend, frontend y base de datos) y levantar los contenedores interconectados.
