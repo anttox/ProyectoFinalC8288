@@ -1,0 +1,34 @@
+# Node.js dependencies
+node_modules/
+
+# Docker
+docker-compose.override.yml
+
+# Build and transpiled files
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+
+# Certificates
+ssl/
+
+# Logs and temporary files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# IDE and system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.bak
+
+# Typescript files
+*.tsbuildinfo
