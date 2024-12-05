@@ -180,10 +180,32 @@ Aunque aún no implementado, se planea integrar:
 ```
 Podemos tener una idea mas detallada para recopilar mediante exporters para recopilar metricas del backend, PostgreSql y Redis, esto en Prometheus y en Grafana visualizar los datos de recursos como CPU, Memoria, etc.
 # Parte 4: Lanzamiento del sistema de autorización para aplicativos web usando HTTPS para mayor seguridad
-- Clona este repositorio que contiene el proyecto usando: git clone
-- Una vez que hayas establecido tu archivo de clonacion usa docker compose up --build para crear en la carpeta sistema-autorizacion para construir las imagenes de Docker para cada servicio (backend, frontend y base de datos) y levantar los contenedores interconectados.
-- En este proyecto, Docker Compose se encarga de instalar las dependencias automaticamente. Aquí detallamos las dependencias especificas y sus propositos.
+## Pasos previos:
+Instalar docker y docker-compose, en mi caso use el link de instalacion de Docker Desktop, para mi se me hizo mas intuitivo poder trabajar de manera grafica con Docker Desktop.
+```bash
+Link de instalación del docker(LINUX): https://docs.docker.com/desktop/setup/install/linux/ubuntu/
+Puedes instalarlo en tu terminal desde la carpeta de Descargas usando: sudo apt-get install ./docker-desktop-amd64.deb
+```
 
+- Despues hacemos una clonacion en nuestro terinal de trabajo usando:
+```bash
+- git clone
+
+```
+- Una vez que hayas establecido tu archivo de clonacion usa:
+```bash
+docker compose up --build para construir las imagenes de Docker para cada servicio (backend, frontend y base de datos) y levantar los contenedores interconectados.
+Estos dockerfiles ya cargan las dependencias que necesitas para ejeuctar el programa.
+```
+Ojo: te recoiendo usar el siguiente comando apra tener permisos de superusuario
+```bash
+sudo usermod -aG docker $USER
+```
+Cuando termines de interactuar con el aplicativo web recuerda usar el siguiente comando para detener los contenedores despues de usar Ctrl + C:
+```bash
+docker compose down
+```
+# Conociendo el proyecto:
 ## Backend:
 ```bash
 Navega al directorio backend:
