@@ -111,6 +111,40 @@ Proyecto-Final/
 │
 ├── .gitignore                      
 ```
+
+## Pasos previos:
+Instalar docker y docker-compose, en mi caso use el link de instalacion de Docker Desktop, para mi se me hizo mas intuitivo poder trabajar de manera grafica con Docker Desktop.
+```bash
+Link de instalación del docker(LINUX):
+https://docs.docker.com/desktop/setup/install/linux/ubuntu/
+Puedes instalarlo en tu terminal desde la carpeta de Descargas usando:
+sudo apt-get install ./docker-desktop-amd64.deb
+```
+
+- Despues hacemos una clonacion en nuestro terinal de trabajo usando:
+```bash
+git clone
+```
+- Una vez que hayas establecido tu archivo de clonacion usa:
+```bash
+docker compose up --build
+Para construir las imagenes de Docker para cada servicio (backend, frontend y base de datos) y levantar los contenedores interconectados.
+Estos dockerfiles ya cargan las dependencias que necesitas para ejeuctar el programa.
+```
+Ojo: te recoiendo usar el siguiente comando apra tener permisos de superusuario
+```bash
+sudo usermod -aG docker $USER
+```
+Cuando termines de interactuar con el aplicativo web recuerda usar el siguiente comando para detener los contenedores despues de usar Ctrl + C:
+```bash
+docker compose down
+```
+# Conociendo el proyecto:
+## Backend:
+```bash
+Navega al directorio backend:
+cd backend
+```
 # 1. Configuración del Sistema
 ## Base de Datos: PostgreSQL
 Se utiliza PostgreSQL por su fiabilidad y capacidad para manejar relaciones complejas entre datos. Las tablas creadas incluyen:
@@ -179,38 +213,6 @@ Aunque aún no implementado, se planea integrar:
     Grafana: Para visualizar dashboards de rendimiento y alertas.
 ```
 Podemos tener una idea mas detallada para recopilar mediante exporters para recopilar metricas del backend, PostgreSql y Redis, esto en Prometheus y en Grafana visualizar los datos de recursos como CPU, Memoria, etc.
-# Parte 4: Lanzamiento del sistema de autorización para aplicativos web usando HTTPS para mayor seguridad
-## Pasos previos:
-Instalar docker y docker-compose, en mi caso use el link de instalacion de Docker Desktop, para mi se me hizo mas intuitivo poder trabajar de manera grafica con Docker Desktop.
-```bash
-Link de instalación del docker(LINUX): https://docs.docker.com/desktop/setup/install/linux/ubuntu/
-Puedes instalarlo en tu terminal desde la carpeta de Descargas usando: sudo apt-get install ./docker-desktop-amd64.deb
-```
-
-- Despues hacemos una clonacion en nuestro terinal de trabajo usando:
-```bash
-- git clone
-
-```
-- Una vez que hayas establecido tu archivo de clonacion usa:
-```bash
-docker compose up --build para construir las imagenes de Docker para cada servicio (backend, frontend y base de datos) y levantar los contenedores interconectados.
-Estos dockerfiles ya cargan las dependencias que necesitas para ejeuctar el programa.
-```
-Ojo: te recoiendo usar el siguiente comando apra tener permisos de superusuario
-```bash
-sudo usermod -aG docker $USER
-```
-Cuando termines de interactuar con el aplicativo web recuerda usar el siguiente comando para detener los contenedores despues de usar Ctrl + C:
-```bash
-docker compose down
-```
-# Conociendo el proyecto:
-## Backend:
-```bash
-Navega al directorio backend:
-cd backend
-```
 
 ### Dependencias principales (definidas en package.json):
 - express: Framework web para manejar solicitudes HTTP.
