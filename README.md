@@ -178,4 +178,68 @@ Aunque aún no implementado, se planea integrar:
     Prometheus: Para recopilar métricas de los contenedores y servicios.
     Grafana: Para visualizar dashboards de rendimiento y alertas.
 ```
+# Parte 4: Lanzamiento del sistema de autorización para aplicativos web usando HTTPS para mayor seguridad
+- Clona este repositorio que contiene el proyecto usando: git clone
+- Una vez que hayas establecido tu archivo de clonacion usa docker compose up --build para crear en la carpeta sistema-autorizacion para construir las imagenes de Docker para cada servicio (backend, frontend y base de datos) y levantar los contenedores interconectados.
+- En este proyecto, Docker Compose se encarga de instalar las dependencias automaticamente. Aquí detallamos las dependencias especificas y sus propositos.
+
+## Backend:
+```bash
+Navega al directorio backend:
+cd backend
+```
+
+### Dependencias principales (definidas en package.json):
+- express: Framework web para manejar solicitudes HTTP.
+- pg: Cliente de PostgreSQL para interactuar con la base de datos.
+- jsonwebtoken: Manejo de tokens JWT para autenticación.
+- bcrypt: Cifrado de contraseñas.
+- dotenv: Manejo de variables de entorno.
+- winston: Registro de logs.
+- crypto: Libreria de seguridad de datos para evitar inyecciones SQL
+- express-validator: para sanitizar entradas, y validacion de datos para un correcto formmato.
+- cors: para la conexion segura entre backend y frontend
+- https: para realizar conexiones https
+
+### Dependencias de desarrollo:
+- typescript: Tipado estático.
+- ts-node-dev: Ejecución en desarrollo.
+- jest: Pruebas unitarias.
+- Tipos (@types): Aseguran compatibilidad con TypeScript.
+
+Frontend:
+```bash
+    Navega al directorio frontend:
+
+    cd frontend
+```
+### Dependencias principales (definidas en package.json):
+- react y react-dom: Biblioteca principal de la interfaz.
+- axios: Cliente HTTP para consumir la API.
+- react-router-dom: Manejo de rutas en React.
+- Dependencias de desarrollo:
+- typescript: Tipado estático.
+- jest: Pruebas unitarias.
+- Tipos (@types): Compatibilidad con TypeScript.
+
+## Base de Datos:
+El script database/init.sql define la estructura inicial:
+- Tablas: usuarios, recursos, logs.
+- Índices: Optimización para consultas rápidas.
+- Datos iniciales: Usuario administrador y logs.
+
+## Redis:
+Integramos Redis en el Backend para gestionar el caché, almacenar tokens JWT, almacenar en caché resultados de consultas que se realizan repetidamente gestionar sesiones de usuario de manera eficiente.
+
+![imagen](https://github.com/user-attachments/assets/15e5dc9d-837b-4b2a-a200-f42cd7fe3009)
+
+## Redux
+Esta tecnología nos permite, a partir de una store global y un control del flujo de datos muy elevado, crear aplicaciones muy sólidas y que por la arquitectura que ofrecen escalables a nivel de datos y volumen de la aplicación.
+
+Codigo en el frontend: src/stores/slices/authSlices.ts -> Realizamos para el manejo de la gestion de estados globalkes en el React. (Login y Register)
+![imagen](https://github.com/user-attachments/assets/a1931a0a-1d31-4b92-bcb9-f9d6c1662307)
+
+Codigo den el frontend: src/stores/index.ts -> guarda el estado de toda la aplicación en un único objeto, llamado store(index)
+![imagen](https://github.com/user-attachments/assets/8cfee099-1e43-4f0b-9e4b-d9b066ce6c1d)
+
 
