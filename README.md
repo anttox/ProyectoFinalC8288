@@ -7,7 +7,7 @@ El proyecto: sistema automatizado de autorización segura para aplicaciones web 
 # Entregable 2: Implementación de seguridad avanzada y despliegue mejorado
 
 ## Objetivo: Incorporar características avanzadas de seguridad, optimizar el rendimiento mediante caché, implementar monitorización básica y mejorar el despliegue de la aplicación utilizando herramientas de contenerización avanzadas.
-
+El pproyecto usa la logica cliente-servidor, al hacer un correcto manejo de rutas para Administradores y Operadores mediante RBAC logramos entender mejor la funcionalidad de los metodos de autenticacion, usando JWT  bcrypt para una  maor seguridad en el uso de cntraseñas, aporta bastante tambien el uso de HTTPS ya que proporciona una capa de seugirdad en nuestro alicativo web, mediante ceritificados SSL, podemos tener un aplicativo que gracias a herramientas como crypto, helmet.js y mas logra la seguirdad requerida para el correcto flujo de datos.
 # Estructura del proyecto completo
 ```bash
 Proyecto-Final/
