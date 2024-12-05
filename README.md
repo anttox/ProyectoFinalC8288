@@ -112,7 +112,7 @@ Proyecto-Final/
 ├── .gitignore                      
 ```
 
-## Pasos previos:
+## Instalacion:
 Instalar docker y docker-compose, en mi caso use el link de instalacion de Docker Desktop, para mi se me hizo mas intuitivo poder trabajar de manera grafica con Docker Desktop.
 ```bash
 Link de instalación del docker(LINUX):
